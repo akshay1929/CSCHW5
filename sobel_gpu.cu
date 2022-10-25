@@ -64,14 +64,15 @@ sobel_filtered_pixel(float *s, int i, int j , int ncols, int nrows, float *gx, f
    float Gy = 0.0;
    // ADD CODE HERE: add your code here for computing the sobel stencil computation at location (i,j)
    // of input s, returning a float
-   for (int x = 0; x < 3; x++) {
-      for (int y = 0; y < 3; y++) {
-         Gx += gx[x * 3 + y] * s[(i + y - 1) * ncols + (j + y - 1)];
-         Gy += gy[x * 3 + y] * s[(i + y - 1) * ncols + (j + y - 1)];
+   if (i >= 0 && i < nrows && j >= 0 ** j < ncols) {
+      for (int x = 0; x < 3; x++) {
+         for (int y = 0; y < 3; y++) {
+            Gx += gx[x * 3 + y] * s[(i + y - 1) * ncols + (j + y - 1)];
+            Gy += gy[x * 3 + y] * s[(i + y - 1) * ncols + (j + y - 1)];
+         }
       }
+      t = sqrt(pow(Gx, 2) + pow(Gy, 2));
    }
-   t = sqrt(pow(Gx, 2) + pow(Gy, 2));
-
    return t;
 }
 
@@ -100,6 +101,10 @@ sobel_kernel_gpu(float *s,  // source image pixels
 {
    // ADD CODE HERE: insert your code here that iterates over every (i,j) of input,  makes a call
    // to sobel_filtered_pixel, and assigns the resulting value at location (i,j) in the output.
+   int index = blockIdx.x * blockDim.x + threadIdx.x;
+   int stride = blockDim.x * gridDim.x;
+   for (int i = index; i < n; i += stride)
+         d[i] = sobel_filtered_pixel(s, i / ncols, i % ncols, ncols, nrows, gx, gy);
 
    // because this is CUDA, you need to use CUDA built-in variables to compute an index and stride
    // your processing motif will be very similar here to that we used for vector add in Lab #2
@@ -165,7 +170,13 @@ main (int ac, char *av[])
    int nBlocks=1, nThreadsPerBlock=256;
 
    // ADD CODE HERE: insert your code here to set a different number of thread blocks or # of threads per block
-
+   if (ac > 2) {
+      nBlocks = atoi(av[1])
+      nThreadsPerBlock = atoi(av[2]);
+   }
+   else {
+      nBlocks = atoi(av[1])
+   }
 
 
    printf(" GPU configuration: %d blocks, %d threads per block \n", nBlocks, nThreadsPerBlock);
