@@ -64,7 +64,7 @@ sobel_filtered_pixel(float *s, int i, int j , int ncols, int nrows, float *gx, f
    float Gy = 0.0;
    // ADD CODE HERE: add your code here for computing the sobel stencil computation at location (i,j)
    // of input s, returning a float
-   if (i >= 0 && i < nrows && j >= 0 ** j < ncols) {
+   if (i >= 0 && i < nrows && j >= 0 && j < ncols) {
       for (int x = 0; x < 3; x++) {
          for (int y = 0; y < 3; y++) {
             Gx += gx[x * 3 + y] * s[(i + y - 1) * ncols + (j + y - 1)];
@@ -171,11 +171,11 @@ main (int ac, char *av[])
 
    // ADD CODE HERE: insert your code here to set a different number of thread blocks or # of threads per block
    if (ac > 2) {
-      nBlocks = atoi(av[1])
+      nBlocks = atoi(av[1]);
       nThreadsPerBlock = atoi(av[2]);
    }
    else {
-      nBlocks = atoi(av[1])
+      nBlocks = atoi(av[1]);
    }
 
 
