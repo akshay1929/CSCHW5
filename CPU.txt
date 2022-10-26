@@ -21,19 +21,19 @@ CGPU Node:
 
 KNL Node:
 OMP_NUM_THREADS=1
- Elapsed time is : 0.809884 
+ Elapsed time is : 0.613941
 
 OMP_NUM_THREADS=2
- Elapsed time is : 0.408425 
+ Elapsed time is : 0.376107 
 
 OMP_NUM_THREADS=4
- Elapsed time is : 0.16934 
+ Elapsed time is : 0.175809 
 
 OMP_NUM_THREADS=6
  Elapsed time is : 0.151322 
 
 OMP_NUM_THREADS=8
- Elapsed time is : 0.116186 
+ Elapsed time is : 0.123166  
 
 OMP_NUM_THREADS=16
- Elapsed time is : 0.087878 
+ Elapsed time is : 0.112623

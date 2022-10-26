@@ -87,7 +87,6 @@ do_sobel_filtering(float *in, float *out, int ncols, int nrows)
             out[i * ncols + j] = sobel_filtered_pixel(in, i, j, ncols, nrows, Gx, Gy);
          }
       }
-   
 }
 
 

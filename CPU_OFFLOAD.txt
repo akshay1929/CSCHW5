@@ -1,34 +1,48 @@
-==14631== NVPROF is profiling process 14631, command: ./sobel_cpu_omp_offload
- Elapsed time is : 0.501695 
+==73659== NVPROF is profiling process 73659, command: ./sobel_cpu_omp_offload
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.494609 
  Wrote the output file ../data/processed-raw-int8-4x-cpu-omp-offload.dat 
-==14631== Profiling application: ./sobel_cpu_omp_offload
-==14631== Profiling result:
+==73659== Profiling application: ./sobel_cpu_omp_offload
+==73659== Profiling result:
             Type  Time(%)      Time     Calls       Avg       Min       Max  Name
- GPU activities:   57.51%  130.62ms         2  65.309ms  2.6240us  130.62ms  [CUDA memcpy DtoH]
-                   41.80%  94.935ms         6  15.822ms  1.4400us  64.499ms  [CUDA memcpy HtoD]
-                    0.69%  1.5736ms         1  1.5736ms  1.5736ms  1.5736ms  __omp_offloading_36_2a1a54fb__Z18do_sobel_filteringPfS_ii_l101
-      API calls:   45.85%  268.86ms         1  268.86ms  268.86ms  268.86ms  cuDevicePrimaryCtxRetain
-                   22.52%  132.05ms         1  132.05ms  132.05ms  132.05ms  cuMemcpyDtoHAsync
-                   16.30%  95.554ms         6  15.926ms  2.4920us  64.927ms  cuMemcpyHtoDAsync
-                   14.39%  84.353ms         1  84.353ms  84.353ms  84.353ms  cuDevicePrimaryCtxRelease
-                    0.30%  1.7812ms         3  593.74us  4.3320us  1.7237ms  cuStreamSynchronize
-                    0.21%  1.2415ms         6  206.92us  2.5880us  464.21us  cuMemAlloc
-                    0.15%  873.62us         2  436.81us  375.80us  497.81us  cuMemFree
-                    0.09%  554.29us        32  17.321us  1.4750us  276.24us  cuStreamCreate
-                    0.09%  520.24us         1  520.24us  520.24us  520.24us  cuModuleUnload
-                    0.05%  302.48us         1  302.48us  302.48us  302.48us  cuModuleLoadDataEx
-                    0.02%  110.99us        32  3.4680us  2.1390us  23.006us  cuStreamDestroy
-                    0.01%  58.578us         1  58.578us  58.578us  58.578us  cuMemcpyDtoH
-                    0.01%  39.719us         1  39.719us  39.719us  39.719us  cuLaunchKernel
-                    0.00%  6.8790us        21     327ns     126ns  2.2000us  cuCtxSetCurrent
-                    0.00%  5.6910us         1  5.6910us  5.6910us  5.6910us  cuDeviceGetPCIBusId
-                    0.00%  5.3830us         1  5.3830us  5.3830us  5.3830us  cuDevicePrimaryCtxGetState
-                    0.00%  5.3230us         2  2.6610us     162ns  5.1610us  cuCtxGetLimit
-                    0.00%  4.5840us         1  4.5840us  4.5840us  4.5840us  cuCtxGetDevice
-                    0.00%  4.2140us         6     702ns     126ns  2.5940us  cuDeviceGetAttribute
-                    0.00%  3.2300us         1  3.2300us  3.2300us  3.2300us  cuFuncGetAttribute
-                    0.00%  3.1410us         2  1.5700us     305ns  2.8360us  cuModuleGetGlobal
-                    0.00%  2.3140us         2  1.1570us     748ns  1.5660us  cuDeviceGet
-                    0.00%  2.3000us         1  2.3000us  2.3000us  2.3000us  cuModuleGetFunction
-                    0.00%  1.4040us         3     468ns     199ns     974ns  cuDeviceGetCount
-                    0.00%     484ns         1     484ns     484ns     484ns  cuDevicePrimaryCtxSetFlags
+ GPU activities:   56.94%  125.11ms         2  62.557ms  2.7840us  125.11ms  [CUDA memcpy DtoH]
+                   42.34%  93.034ms         6  15.506ms  1.4080us  62.619ms  [CUDA memcpy HtoD]
+                    0.72%  1.5765ms         1  1.5765ms  1.5765ms  1.5765ms  __omp_offloading_36_2a1a5693__Z18do_sobel_filteringPfS_ii_l101
+      API calls:   46.39%  269.47ms         1  269.47ms  269.47ms  269.47ms  cuDevicePrimaryCtxRetain
+                   21.78%  126.52ms         1  126.52ms  126.52ms  126.52ms  cuMemcpyDtoHAsync
+                   16.11%  93.614ms         6  15.602ms  2.2870us  63.013ms  cuMemcpyHtoDAsync
+                   14.81%  86.037ms         1  86.037ms  86.037ms  86.037ms  cuDevicePrimaryCtxRelease
+                    0.32%  1.8352ms         3  611.75us  2.1370us  1.7735ms  cuStreamSynchronize
+                    0.20%  1.1906ms         6  198.43us  2.3520us  467.19us  cuMemAlloc
+                    0.14%  799.19us         2  399.59us  356.80us  442.39us  cuMemFree
+                    0.08%  478.01us        32  14.937us  1.3440us  224.26us  cuStreamCreate
+                    0.08%  471.98us         1  471.98us  471.98us  471.98us  cuModuleUnload
+                    0.05%  299.61us         1  299.61us  299.61us  299.61us  cuModuleLoadDataEx
+                    0.02%  94.686us        32  2.9580us  1.8790us  19.101us  cuStreamDestroy
+                    0.01%  46.739us         1  46.739us  46.739us  46.739us  cuMemcpyDtoH
+                    0.01%  34.451us         1  34.451us  34.451us  34.451us  cuLaunchKernel
+                    0.00%  6.0360us         1  6.0360us  6.0360us  6.0360us  cuDevicePrimaryCtxGetState
+                    0.00%  5.1230us         1  5.1230us  5.1230us  5.1230us  cuDeviceGetPCIBusId
+                    0.00%  5.0810us         2  2.5400us     170ns  4.9110us  cuCtxGetLimit
+                    0.00%  4.8770us        21     232ns     113ns  1.0690us  cuCtxSetCurrent
+                    0.00%  3.9320us         1  3.9320us  3.9320us  3.9320us  cuCtxGetDevice
+                    0.00%  3.1810us         6     530ns     113ns  2.0710us  cuDeviceGetAttribute
+                    0.00%  3.0230us         2  1.5110us     334ns  2.6890us  cuModuleGetGlobal
+                    0.00%  2.9190us         1  2.9190us  2.9190us  2.9190us  cuFuncGetAttribute
+                    0.00%  2.2440us         1  2.2440us  2.2440us  2.2440us  cuModuleGetFunction
+                    0.00%  2.1170us         2  1.0580us     514ns  1.6030us  cuDeviceGet
+                    0.00%     892ns         3     297ns     160ns     567ns  cuDeviceGetCount
+                    0.00%     486ns         1     486ns     486ns     486ns  cuDevicePrimaryCtxSetFlags
+
+amhatre@cgpu02:~/CSCHW5/build> nvprof -m sm_efficiency ./sobel_cpu_omp_offload 
+==73739== NVPROF is profiling process 73739, command: ./sobel_cpu_omp_offload
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.470249 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu-omp-offload.dat 
+==73739== Profiling application: ./sobel_cpu_omp_offload
+==73739== Profiling result:
+==73739== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: __omp_offloading_36_2a1a5693__Z18do_sobel_filteringPfS_ii_l101
+          1                             sm_efficiency                   Multiprocessor Activity      99.60%      99.60%      99.60%
