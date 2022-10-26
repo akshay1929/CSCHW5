@@ -98,7 +98,7 @@ do_sobel_filtering(float *in, float *out, int ncols, int nrows)
    {
       // ADD CODE HERE: add the parallel region here, with the appropriate clauses to indicate that the
       // loop is to be executed on the device
-      #pragma omp target teams parallel for
+      #pragma omp target teams distribute parallel for
       {
       // ADD CODE HERE: insert your code here that iterates over every (i,j) of input,  makes a call
       // to sobel_filtered_pixel, and assigns the resulting value at location (i,j) in the output.

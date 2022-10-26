@@ -1,3 +1,5 @@
 /global/homes/a/amhatre/CSCHW5/build/CMakeFiles/sobel_cpu.dir
+/global/homes/a/amhatre/CSCHW5/build/CMakeFiles/sobel_cpu_omp_offload.dir
+/global/homes/a/amhatre/CSCHW5/build/CMakeFiles/sobel_gpu.dir
 /global/homes/a/amhatre/CSCHW5/build/CMakeFiles/edit_cache.dir
 /global/homes/a/amhatre/CSCHW5/build/CMakeFiles/rebuild_cache.dir
