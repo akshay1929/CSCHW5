@@ -51,7 +51,7 @@ for i in range(len(threads_per_block)): # y axis
         text = ax.text(j, i, runtime[i, j],
                        ha="center", va="center", color="k")
 
-ax.set_title("Runtime on <what platform> at Varying Block Size and Number of Blocks")
+ax.set_title("Runtime on Skylake processor on a Cori GPU node at Varying Block Size and Number of Blocks")
 ax.set_ylabel('Threads per block')
 ax.set_xlabel('Block Sizes')
 fig.colorbar(im, ax=ax)
