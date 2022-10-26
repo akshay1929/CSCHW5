@@ -111,8 +111,8 @@ do_sobel_filtering(float *in, float *out, int ncols, int nrows)
       // You may also wish to consider additional clauses that might be appropriate here to increase parallelism 
       // if you are using nested loops.
 
-      } // pragma omp target data
-   }
+      } // pragma omp target teams
+   } // pragma omp target data
 }
 
 
