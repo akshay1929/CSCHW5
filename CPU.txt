@@ -1,3 +1,4 @@
+CGPU Node:
 .sobel_cpu concurrency 1
  Read data from the file ../data/zebra-gray-int8-4x 
  Elapsed time is : 0.431031 
@@ -17,3 +18,22 @@
 .sobel_cpu concurrency 16
  Read data from the file ../data/zebra-gray-int8-4x 
  Elapsed time is : 0.181361 
+
+KNL Node:
+OMP_NUM_THREADS=1
+ Elapsed time is : 0.809884 
+
+OMP_NUM_THREADS=2
+ Elapsed time is : 0.408425 
+
+OMP_NUM_THREADS=4
+ Elapsed time is : 0.16934 
+
+OMP_NUM_THREADS=6
+ Elapsed time is : 0.151322 
+
+OMP_NUM_THREADS=8
+ Elapsed time is : 0.116186 
+
+OMP_NUM_THREADS=16
+ Elapsed time is : 0.087878 
