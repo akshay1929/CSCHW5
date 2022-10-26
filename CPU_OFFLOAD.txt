@@ -1,0 +1,34 @@
+==14631== NVPROF is profiling process 14631, command: ./sobel_cpu_omp_offload
+ Elapsed time is : 0.501695 
+ Wrote the output file ../data/processed-raw-int8-4x-cpu-omp-offload.dat 
+==14631== Profiling application: ./sobel_cpu_omp_offload
+==14631== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   57.51%  130.62ms         2  65.309ms  2.6240us  130.62ms  [CUDA memcpy DtoH]
+                   41.80%  94.935ms         6  15.822ms  1.4400us  64.499ms  [CUDA memcpy HtoD]
+                    0.69%  1.5736ms         1  1.5736ms  1.5736ms  1.5736ms  __omp_offloading_36_2a1a54fb__Z18do_sobel_filteringPfS_ii_l101
+      API calls:   45.85%  268.86ms         1  268.86ms  268.86ms  268.86ms  cuDevicePrimaryCtxRetain
+                   22.52%  132.05ms         1  132.05ms  132.05ms  132.05ms  cuMemcpyDtoHAsync
+                   16.30%  95.554ms         6  15.926ms  2.4920us  64.927ms  cuMemcpyHtoDAsync
+                   14.39%  84.353ms         1  84.353ms  84.353ms  84.353ms  cuDevicePrimaryCtxRelease
+                    0.30%  1.7812ms         3  593.74us  4.3320us  1.7237ms  cuStreamSynchronize
+                    0.21%  1.2415ms         6  206.92us  2.5880us  464.21us  cuMemAlloc
+                    0.15%  873.62us         2  436.81us  375.80us  497.81us  cuMemFree
+                    0.09%  554.29us        32  17.321us  1.4750us  276.24us  cuStreamCreate
+                    0.09%  520.24us         1  520.24us  520.24us  520.24us  cuModuleUnload
+                    0.05%  302.48us         1  302.48us  302.48us  302.48us  cuModuleLoadDataEx
+                    0.02%  110.99us        32  3.4680us  2.1390us  23.006us  cuStreamDestroy
+                    0.01%  58.578us         1  58.578us  58.578us  58.578us  cuMemcpyDtoH
+                    0.01%  39.719us         1  39.719us  39.719us  39.719us  cuLaunchKernel
+                    0.00%  6.8790us        21     327ns     126ns  2.2000us  cuCtxSetCurrent
+                    0.00%  5.6910us         1  5.6910us  5.6910us  5.6910us  cuDeviceGetPCIBusId
+                    0.00%  5.3830us         1  5.3830us  5.3830us  5.3830us  cuDevicePrimaryCtxGetState
+                    0.00%  5.3230us         2  2.6610us     162ns  5.1610us  cuCtxGetLimit
+                    0.00%  4.5840us         1  4.5840us  4.5840us  4.5840us  cuCtxGetDevice
+                    0.00%  4.2140us         6     702ns     126ns  2.5940us  cuDeviceGetAttribute
+                    0.00%  3.2300us         1  3.2300us  3.2300us  3.2300us  cuFuncGetAttribute
+                    0.00%  3.1410us         2  1.5700us     305ns  2.8360us  cuModuleGetGlobal
+                    0.00%  2.3140us         2  1.1570us     748ns  1.5660us  cuDeviceGet
+                    0.00%  2.3000us         1  2.3000us  2.3000us  2.3000us  cuModuleGetFunction
+                    0.00%  1.4040us         3     468ns     199ns     974ns  cuDeviceGetCount
+                    0.00%     484ns         1     484ns     484ns     484ns  cuDevicePrimaryCtxSetFlags
