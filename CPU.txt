@@ -1,0 +1,19 @@
+.sobel_cpu concurrency 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.431031 
+
+.sobel_cpu concurrency 2
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.221064 
+
+.sobel_cpu concurrency 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.113404 
+
+.sobel_cpu concurrency 8
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.14762 
+
+.sobel_cpu concurrency 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+ Elapsed time is : 0.181361 

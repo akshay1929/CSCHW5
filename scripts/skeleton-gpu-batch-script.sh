@@ -20,8 +20,9 @@ for N in 32 64 128 256 512 1024 # loop over problem sizes
     for t in 1 4 16 64 256 1024 4096  # loop over concurrency level
 #      for t in 1  # if running the blas version, uncomment this line and comment out the previous line looping over t in 1 4 16 64
         do
-        echo nvprof -m sm_efficiency ./sobel_gpu $N $t
-        nvprof -m sm_efficiency ./sobel_gpu $N $t
+        echo nvprof ./sobel_gpu $N $t
+        nvprof ./sobel_gpu $N $t
+        echo 
         done 
 done # iterate over problem size
 
