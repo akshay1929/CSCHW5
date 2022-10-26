@@ -1,0 +1,1803 @@
+nvprof ./sobel_gpu 32 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43610== NVPROF is profiling process 43610, command: ./sobel_gpu 32 1
+ GPU configuration: 1 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43610== Profiling application: ./sobel_gpu 32 1
+==43610== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  1.80918s         1  1.80918s  1.80918s  1.80918s  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   85.50%  1.82316s         1  1.82316s  1.82316s  1.82316s  cudaDeviceSynchronize
+                   13.71%  292.31ms         4  73.078ms  6.7720us  292.16ms  cudaMallocManaged
+                    0.73%  15.585ms         4  3.8964ms  4.2790us  15.391ms  cudaMemPrefetchAsync
+                    0.03%  741.42us       101  7.3400us     110ns  329.44us  cuDeviceGetAttribute
+                    0.02%  335.69us         1  335.69us  335.69us  335.69us  cuDeviceTotalMem
+                    0.00%  93.948us         1  93.948us  93.948us  93.948us  cuDeviceGetName
+                    0.00%  64.387us         1  64.387us  64.387us  64.387us  cudaLaunchKernel
+                    0.00%  6.1130us         1  6.1130us  6.1130us  6.1130us  cuDeviceGetPCIBusId
+                    0.00%  1.1200us         3     373ns     120ns     815ns  cuDeviceGetCount
+                    0.00%     605ns         2     302ns     112ns     493ns  cuDeviceGet
+                    0.00%     234ns         1     234ns     234ns     234ns  cuDeviceGetUuid
+
+==43610== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.42394ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.17051ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43660== NVPROF is profiling process 43660, command: ./sobel_gpu 32 1
+ GPU configuration: 1 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43660== Profiling application: ./sobel_gpu 32 1
+==43660== Profiling result:
+==43660== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       1.25%       1.25%       1.25%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 32 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43708== NVPROF is profiling process 43708, command: ./sobel_gpu 32 4
+ GPU configuration: 4 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43708== Profiling application: ./sobel_gpu 32 4
+==43708== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  446.43ms         1  446.43ms  446.43ms  446.43ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   60.22%  461.72ms         1  461.72ms  461.72ms  461.72ms  cudaDeviceSynchronize
+                   37.54%  287.79ms         4  71.949ms  6.9450us  287.63ms  cudaMallocManaged
+                    2.05%  15.704ms         4  3.9261ms  4.7070us  15.566ms  cudaMemPrefetchAsync
+                    0.10%  762.67us       101  7.5510us     116ns  339.37us  cuDeviceGetAttribute
+                    0.08%  584.79us         1  584.79us  584.79us  584.79us  cuDeviceTotalMem
+                    0.01%  91.536us         1  91.536us  91.536us  91.536us  cuDeviceGetName
+                    0.01%  61.768us         1  61.768us  61.768us  61.768us  cudaLaunchKernel
+                    0.00%  6.1660us         1  6.1660us  6.1660us  6.1660us  cuDeviceGetPCIBusId
+                    0.00%  1.0590us         3     353ns     128ns     751ns  cuDeviceGetCount
+                    0.00%     695ns         2     347ns     126ns     569ns  cuDeviceGet
+                    0.00%     260ns         1     260ns     260ns     260ns  cuDeviceGetUuid
+
+==43708== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.49868ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15291ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43757== NVPROF is profiling process 43757, command: ./sobel_gpu 32 4
+ GPU configuration: 4 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43757== Profiling application: ./sobel_gpu 32 4
+==43757== Profiling result:
+==43757== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       5.00%       5.00%       5.00%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 32 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43803== NVPROF is profiling process 43803, command: ./sobel_gpu 32 16
+ GPU configuration: 16 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43803== Profiling application: ./sobel_gpu 32 16
+==43803== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  112.04ms         1  112.04ms  112.04ms  112.04ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   66.77%  287.67ms         4  71.917ms  6.9270us  287.51ms  cudaMallocManaged
+                   29.26%  126.04ms         1  126.04ms  126.04ms  126.04ms  cudaDeviceSynchronize
+                    3.67%  15.806ms         4  3.9514ms  4.1880us  15.577ms  cudaMemPrefetchAsync
+                    0.18%  765.80us       101  7.5820us     272ns  333.70us  cuDeviceGetAttribute
+                    0.08%  346.10us         1  346.10us  346.10us  346.10us  cuDeviceTotalMem
+                    0.02%  99.925us         1  99.925us  99.925us  99.925us  cuDeviceGetName
+                    0.02%  75.039us         1  75.039us  75.039us  75.039us  cudaLaunchKernel
+                    0.00%  6.2590us         1  6.2590us  6.2590us  6.2590us  cuDeviceGetPCIBusId
+                    0.00%  1.5130us         3     504ns     282ns     898ns  cuDeviceGetCount
+                    0.00%     957ns         2     478ns     280ns     677ns  cuDeviceGet
+                    0.00%     349ns         1     349ns     349ns     349ns  cuDeviceGetUuid
+
+==43803== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.44481ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15833ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43860== NVPROF is profiling process 43860, command: ./sobel_gpu 32 16
+ GPU configuration: 16 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43860== Profiling application: ./sobel_gpu 32 16
+==43860== Profiling result:
+==43860== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      19.99%      19.99%      19.99%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 32 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43906== NVPROF is profiling process 43906, command: ./sobel_gpu 32 64
+ GPU configuration: 64 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43906== Profiling application: ./sobel_gpu 32 64
+==43906== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  28.013ms         1  28.013ms  28.013ms  28.013ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   82.83%  286.36ms         4  71.589ms  7.5340us  286.19ms  cudaMallocManaged
+                   12.17%  42.058ms         1  42.058ms  42.058ms  42.058ms  cudaDeviceSynchronize
+                    4.52%  15.633ms         4  3.9081ms  4.2830us  15.437ms  cudaMemPrefetchAsync
+                    0.29%  992.45us       101  9.8260us     118ns  450.20us  cuDeviceGetAttribute
+                    0.14%  476.17us         1  476.17us  476.17us  476.17us  cuDeviceTotalMem
+                    0.03%  117.60us         1  117.60us  117.60us  117.60us  cuDeviceGetName
+                    0.02%  59.542us         1  59.542us  59.542us  59.542us  cudaLaunchKernel
+                    0.00%  6.5240us         1  6.5240us  6.5240us  6.5240us  cuDeviceGetPCIBusId
+                    0.00%  1.0140us         3     338ns     145ns     702ns  cuDeviceGetCount
+                    0.00%     525ns         2     262ns     138ns     387ns  cuDeviceGet
+                    0.00%     240ns         1     240ns     240ns     240ns  cuDeviceGetUuid
+
+==43906== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.40986ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16863ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==43956== NVPROF is profiling process 43956, command: ./sobel_gpu 32 64
+ GPU configuration: 64 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==43956== Profiling application: ./sobel_gpu 32 64
+==43956== Profiling result:
+==43956== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.88%      79.88%      79.88%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 32 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44003== NVPROF is profiling process 44003, command: ./sobel_gpu 32 256
+ GPU configuration: 256 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44003== Profiling application: ./sobel_gpu 32 256
+==44003== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  7.0864ms         1  7.0864ms  7.0864ms  7.0864ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   88.35%  286.14ms         4  71.535ms  6.7910us  285.98ms  cudaMallocManaged
+                    6.42%  20.793ms         1  20.793ms  20.793ms  20.793ms  cudaDeviceSynchronize
+                    4.83%  15.638ms         4  3.9094ms  4.1150us  15.442ms  cudaMemPrefetchAsync
+                    0.23%  741.22us       101  7.3380us     119ns  333.87us  cuDeviceGetAttribute
+                    0.11%  360.10us         1  360.10us  360.10us  360.10us  cuDeviceTotalMem
+                    0.03%  104.95us         1  104.95us  104.95us  104.95us  cuDeviceGetName
+                    0.02%  76.864us         1  76.864us  76.864us  76.864us  cudaLaunchKernel
+                    0.01%  16.812us         2  8.4060us     446ns  16.366us  cuDeviceGet
+                    0.00%  5.9670us         1  5.9670us  5.9670us  5.9670us  cuDeviceGetPCIBusId
+                    0.00%  1.1520us         3     384ns     124ns     813ns  cuDeviceGetCount
+                    0.00%     251ns         1     251ns     251ns     251ns  cuDeviceGetUuid
+
+==44003== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.52280ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15890ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44051== NVPROF is profiling process 44051, command: ./sobel_gpu 32 256
+ GPU configuration: 256 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44051== Profiling application: ./sobel_gpu 32 256
+==44051== Profiling result:
+==44051== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      99.83%      99.83%      99.83%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 32 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44097== NVPROF is profiling process 44097, command: ./sobel_gpu 32 1024
+ GPU configuration: 1024 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44097== Profiling application: ./sobel_gpu 32 1024
+==44097== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  3.1285ms         1  3.1285ms  3.1285ms  3.1285ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.55%  287.66ms         4  71.916ms  6.6960us  287.50ms  cudaMallocManaged
+                    5.20%  16.715ms         1  16.715ms  16.715ms  16.715ms  cudaDeviceSynchronize
+                    4.85%  15.565ms         4  3.8912ms  4.2500us  15.364ms  cudaMemPrefetchAsync
+                    0.24%  779.21us       101  7.7140us     274ns  341.98us  cuDeviceGetAttribute
+                    0.11%  346.10us         1  346.10us  346.10us  346.10us  cuDeviceTotalMem
+                    0.03%  92.383us         1  92.383us  92.383us  92.383us  cuDeviceGetName
+                    0.02%  78.543us         1  78.543us  78.543us  78.543us  cudaLaunchKernel
+                    0.00%  6.4780us         1  6.4780us  6.4780us  6.4780us  cuDeviceGetPCIBusId
+                    0.00%  1.4800us         3     493ns     316ns     837ns  cuDeviceGetCount
+                    0.00%     945ns         2     472ns     300ns     645ns  cuDeviceGet
+                    0.00%     368ns         1     368ns     368ns     368ns  cuDeviceGetUuid
+
+==44097== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.47083ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.25944ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44145== NVPROF is profiling process 44145, command: ./sobel_gpu 32 1024
+ GPU configuration: 1024 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44145== Profiling application: ./sobel_gpu 32 1024
+==44145== Profiling result:
+==44145== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      96.44%      96.44%      96.44%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 32 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44191== NVPROF is profiling process 44191, command: ./sobel_gpu 32 4096
+ GPU configuration: 4096 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44191== Profiling application: ./sobel_gpu 32 4096
+==44191== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.6413ms         1  2.6413ms  2.6413ms  2.6413ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.44%  286.67ms         4  71.668ms  6.8450us  286.51ms  cudaMallocManaged
+                    5.31%  17.021ms         1  17.021ms  17.021ms  17.021ms  cudaDeviceSynchronize
+                    4.85%  15.550ms         4  3.8876ms  4.3130us  15.359ms  cudaMemPrefetchAsync
+                    0.23%  752.87us       101  7.4540us     116ns  333.61us  cuDeviceGetAttribute
+                    0.11%  346.29us         1  346.29us  346.29us  346.29us  cuDeviceTotalMem
+                    0.03%  94.358us         1  94.358us  94.358us  94.358us  cuDeviceGetName
+                    0.02%  79.864us         1  79.864us  79.864us  79.864us  cudaLaunchKernel
+                    0.00%  5.7880us         1  5.7880us  5.7880us  5.7880us  cuDeviceGetPCIBusId
+                    0.00%  1.0070us         3     335ns     131ns     695ns  cuDeviceGetCount
+                    0.00%     631ns         2     315ns     133ns     498ns  cuDeviceGet
+                    0.00%     230ns         1     230ns     230ns     230ns  cuDeviceGetUuid
+
+==44191== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.45982ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.24946ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 32 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44239== NVPROF is profiling process 44239, command: ./sobel_gpu 32 4096
+ GPU configuration: 4096 blocks, 32 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44239== Profiling application: ./sobel_gpu 32 4096
+==44239== Profiling result:
+==44239== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      93.06%      93.06%      93.06%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44285== NVPROF is profiling process 44285, command: ./sobel_gpu 64 1
+ GPU configuration: 1 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44285== Profiling application: ./sobel_gpu 64 1
+==44285== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  919.40ms         1  919.40ms  919.40ms  919.40ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   75.52%  934.19ms         1  934.19ms  934.19ms  934.19ms  cudaDeviceSynchronize
+                   23.13%  286.08ms         4  71.521ms  6.6190us  285.93ms  cudaMallocManaged
+                    1.25%  15.494ms         4  3.8735ms  4.5020us  15.351ms  cudaMemPrefetchAsync
+                    0.06%  749.64us       101  7.4220us     114ns  332.17us  cuDeviceGetAttribute
+                    0.03%  347.78us         1  347.78us  347.78us  347.78us  cuDeviceTotalMem
+                    0.01%  95.744us         1  95.744us  95.744us  95.744us  cuDeviceGetName
+                    0.00%  60.214us         1  60.214us  60.214us  60.214us  cudaLaunchKernel
+                    0.00%  6.1100us         1  6.1100us  6.1100us  6.1100us  cuDeviceGetPCIBusId
+                    0.00%  1.1460us         3     382ns     169ns     794ns  cuDeviceGetCount
+                    0.00%     583ns         2     291ns     125ns     458ns  cuDeviceGet
+                    0.00%     206ns         1     206ns     206ns     206ns  cuDeviceGetUuid
+
+==44285== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.48004ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15674ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44335== NVPROF is profiling process 44335, command: ./sobel_gpu 64 1
+ GPU configuration: 1 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44335== Profiling application: ./sobel_gpu 64 1
+==44335== Profiling result:
+==44335== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       1.25%       1.25%       1.25%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44383== NVPROF is profiling process 44383, command: ./sobel_gpu 64 4
+ GPU configuration: 4 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44383== Profiling application: ./sobel_gpu 64 4
+==44383== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  223.62ms         1  223.62ms  223.62ms  223.62ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   53.00%  286.53ms         4  71.633ms  6.9420us  286.37ms  cudaMallocManaged
+                   43.88%  237.20ms         1  237.20ms  237.20ms  237.20ms  cudaDeviceSynchronize
+                    2.87%  15.513ms         4  3.8782ms  4.9530us  15.364ms  cudaMemPrefetchAsync
+                    0.14%  778.54us       101  7.7080us     117ns  360.44us  cuDeviceGetAttribute
+                    0.07%  396.88us         1  396.88us  396.88us  396.88us  cuDeviceTotalMem
+                    0.02%  96.619us         1  96.619us  96.619us  96.619us  cuDeviceGetName
+                    0.01%  60.730us         1  60.730us  60.730us  60.730us  cudaLaunchKernel
+                    0.00%  7.0280us         1  7.0280us  7.0280us  7.0280us  cuDeviceGetPCIBusId
+                    0.00%  1.4960us         3     498ns     201ns     891ns  cuDeviceGetCount
+                    0.00%     777ns         2     388ns     309ns     468ns  cuDeviceGet
+                    0.00%     233ns         1     233ns     233ns     233ns  cuDeviceGetUuid
+
+==44383== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.43324ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15861ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44467== NVPROF is profiling process 44467, command: ./sobel_gpu 64 4
+ GPU configuration: 4 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44467== Profiling application: ./sobel_gpu 64 4
+==44467== Profiling result:
+==44467== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       5.00%       5.00%       5.00%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44729== NVPROF is profiling process 44729, command: ./sobel_gpu 64 16
+ GPU configuration: 16 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44729== Profiling application: ./sobel_gpu 64 16
+==44729== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  55.931ms         1  55.931ms  55.931ms  55.931ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   79.36%  327.11ms         4  81.778ms  6.1850us  326.97ms  cudaMallocManaged
+                   16.90%  69.648ms         1  69.648ms  69.648ms  69.648ms  cudaDeviceSynchronize
+                    3.39%  13.954ms         4  3.4885ms  4.2320us  13.776ms  cudaMemPrefetchAsync
+                    0.19%  766.84us       101  7.5920us     121ns  341.01us  cuDeviceGetAttribute
+                    0.12%  508.28us         1  508.28us  508.28us  508.28us  cuDeviceTotalMem
+                    0.03%  110.04us         1  110.04us  110.04us  110.04us  cuDeviceGetName
+                    0.02%  71.989us         1  71.989us  71.989us  71.989us  cudaLaunchKernel
+                    0.00%  6.0620us         1  6.0620us  6.0620us  6.0620us  cuDeviceGetPCIBusId
+                    0.00%  1.0880us         3     362ns     127ns     795ns  cuDeviceGetCount
+                    0.00%     860ns         2     430ns     124ns     736ns  cuDeviceGet
+                    0.00%     232ns         1     232ns     232ns     232ns  cuDeviceGetUuid
+
+==44729== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.42615ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16888ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44874== NVPROF is profiling process 44874, command: ./sobel_gpu 64 16
+ GPU configuration: 16 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44874== Profiling application: ./sobel_gpu 64 16
+==44874== Profiling result:
+==44874== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      19.99%      19.99%      19.99%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==44995== NVPROF is profiling process 44995, command: ./sobel_gpu 64 64
+ GPU configuration: 64 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==44995== Profiling application: ./sobel_gpu 64 64
+==44995== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  14.032ms         1  14.032ms  14.032ms  14.032ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   87.83%  333.14ms         4  83.286ms  7.2320us  333.00ms  cudaMallocManaged
+                    7.52%  28.535ms         1  28.535ms  28.535ms  28.535ms  cudaDeviceSynchronize
+                    4.30%  16.303ms         4  4.0758ms  4.5470us  16.094ms  cudaMemPrefetchAsync
+                    0.21%  792.44us       101  7.8450us     280ns  363.69us  cuDeviceGetAttribute
+                    0.09%  357.98us         1  357.98us  357.98us  357.98us  cuDeviceTotalMem
+                    0.03%  100.20us         1  100.20us  100.20us  100.20us  cuDeviceGetName
+                    0.02%  70.634us         1  70.634us  70.634us  70.634us  cudaLaunchKernel
+                    0.00%  6.7660us         1  6.7660us  6.7660us  6.7660us  cuDeviceGetPCIBusId
+                    0.00%  1.5510us         3     517ns     301ns     915ns  cuDeviceGetCount
+                    0.00%     979ns         2     489ns     309ns     670ns  cuDeviceGet
+                    0.00%     376ns         1     376ns     376ns     376ns  cuDeviceGetUuid
+
+==44995== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.51438ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15753ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45127== NVPROF is profiling process 45127, command: ./sobel_gpu 64 64
+ GPU configuration: 64 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45127== Profiling application: ./sobel_gpu 64 64
+==45127== Profiling result:
+==45127== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.94%      79.94%      79.94%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45227== NVPROF is profiling process 45227, command: ./sobel_gpu 64 256
+ GPU configuration: 256 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45227== Profiling application: ./sobel_gpu 64 256
+==45227== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  3.9201ms         1  3.9201ms  3.9201ms  3.9201ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   91.58%  375.71ms         4  93.928ms  6.4690us  375.56ms  cudaMallocManaged
+                    4.33%  17.783ms         1  17.783ms  17.783ms  17.783ms  cudaDeviceSynchronize
+                    3.78%  15.492ms         4  3.8729ms  5.0370us  15.234ms  cudaMemPrefetchAsync
+                    0.19%  765.64us       101  7.5800us     118ns  345.91us  cuDeviceGetAttribute
+                    0.09%  350.14us         1  350.14us  350.14us  350.14us  cuDeviceTotalMem
+                    0.02%  90.865us         1  90.865us  90.865us  90.865us  cuDeviceGetName
+                    0.02%  67.553us         1  67.553us  67.553us  67.553us  cudaLaunchKernel
+                    0.00%  7.7080us         1  7.7080us  7.7080us  7.7080us  cuDeviceGetPCIBusId
+                    0.00%  1.0340us         3     344ns     127ns     740ns  cuDeviceGetCount
+                    0.00%     692ns         2     346ns     121ns     571ns  cuDeviceGet
+                    0.00%     253ns         1     253ns     253ns     253ns  cuDeviceGetUuid
+
+==45227== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.37656ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15631ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45336== NVPROF is profiling process 45336, command: ./sobel_gpu 64 256
+ GPU configuration: 256 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45336== Profiling application: ./sobel_gpu 64 256
+==45336== Profiling result:
+==45336== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      99.70%      99.70%      99.70%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45489== NVPROF is profiling process 45489, command: ./sobel_gpu 64 1024
+ GPU configuration: 1024 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45489== Profiling application: ./sobel_gpu 64 1024
+==45489== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.1949ms         1  2.1949ms  2.1949ms  2.1949ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   90.63%  284.53ms         4  71.131ms  6.7220us  284.37ms  cudaMallocManaged
+                    4.96%  15.579ms         1  15.579ms  15.579ms  15.579ms  cudaDeviceSynchronize
+                    4.00%  12.568ms         4  3.1420ms  4.5170us  12.423ms  cudaMemPrefetchAsync
+                    0.24%  753.81us       101  7.4630us     116ns  333.62us  cuDeviceGetAttribute
+                    0.11%  348.43us         1  348.43us  348.43us  348.43us  cuDeviceTotalMem
+                    0.03%  89.261us         1  89.261us  89.261us  89.261us  cuDeviceGetName
+                    0.02%  59.633us         1  59.633us  59.633us  59.633us  cudaLaunchKernel
+                    0.00%  6.4830us         1  6.4830us  6.4830us  6.4830us  cuDeviceGetPCIBusId
+                    0.00%  1.1060us         3     368ns     131ns     791ns  cuDeviceGetCount
+                    0.00%     643ns         2     321ns     114ns     529ns  cuDeviceGet
+                    0.00%     237ns         1     237ns     237ns     237ns  cuDeviceGetUuid
+
+==45489== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.45845ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16998ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45605== NVPROF is profiling process 45605, command: ./sobel_gpu 64 1024
+ GPU configuration: 1024 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45605== Profiling application: ./sobel_gpu 64 1024
+==45605== Profiling result:
+==45605== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      96.81%      96.81%      96.81%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 64 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45712== NVPROF is profiling process 45712, command: ./sobel_gpu 64 4096
+ GPU configuration: 4096 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45712== Profiling application: ./sobel_gpu 64 4096
+==45712== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.2072ms         1  2.2072ms  2.2072ms  2.2072ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   90.87%  340.08ms         4  85.020ms  6.7610us  339.94ms  cudaMallocManaged
+                    4.40%  16.454ms         1  16.454ms  16.454ms  16.454ms  cudaDeviceSynchronize
+                    3.99%  14.923ms         4  3.7306ms  11.082us  14.718ms  cudaMemPrefetchAsync
+                    0.55%  2.0754ms       101  20.548us     279ns  946.61us  cuDeviceGetAttribute
+                    0.14%  539.77us         1  539.77us  539.77us  539.77us  cuDeviceTotalMem
+                    0.03%  116.79us         1  116.79us  116.79us  116.79us  cuDeviceGetName
+                    0.02%  66.186us         1  66.186us  66.186us  66.186us  cudaLaunchKernel
+                    0.00%  6.0980us         1  6.0980us  6.0980us  6.0980us  cuDeviceGetPCIBusId
+                    0.00%  1.4770us         3     492ns     306ns     859ns  cuDeviceGetCount
+                    0.00%     873ns         2     436ns     304ns     569ns  cuDeviceGet
+                    0.00%     364ns         1     364ns     364ns     364ns  cuDeviceGetUuid
+
+==45712== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.40609ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.17025ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 64 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45822== NVPROF is profiling process 45822, command: ./sobel_gpu 64 4096
+ GPU configuration: 4096 blocks, 64 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45822== Profiling application: ./sobel_gpu 64 4096
+==45822== Profiling result:
+==45822== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      95.07%      95.07%      95.07%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==45975== NVPROF is profiling process 45975, command: ./sobel_gpu 128 1
+ GPU configuration: 1 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==45975== Profiling application: ./sobel_gpu 128 1
+==45975== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  447.52ms         1  447.52ms  447.52ms  447.52ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   60.46%  464.11ms         1  464.11ms  464.11ms  464.11ms  cudaDeviceSynchronize
+                   37.38%  286.91ms         4  71.728ms  10.494us  286.74ms  cudaMallocManaged
+                    2.00%  15.357ms         4  3.8392ms  11.897us  15.170ms  cudaMemPrefetchAsync
+                    0.10%  758.01us       101  7.5050us     117ns  342.07us  cuDeviceGetAttribute
+                    0.05%  348.52us         1  348.52us  348.52us  348.52us  cuDeviceTotalMem
+                    0.01%  91.402us         1  91.402us  91.402us  91.402us  cuDeviceGetName
+                    0.01%  56.382us         1  56.382us  56.382us  56.382us  cudaLaunchKernel
+                    0.00%  6.3480us         1  6.3480us  6.3480us  6.3480us  cuDeviceGetPCIBusId
+                    0.00%  1.5520us         3     517ns     118ns  1.2520us  cuDeviceGetCount
+                    0.00%     626ns         2     313ns     118ns     508ns  cuDeviceGet
+                    0.00%     272ns         1     272ns     272ns     272ns  cuDeviceGetUuid
+
+==45975== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.36063ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15624ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46085== NVPROF is profiling process 46085, command: ./sobel_gpu 128 1
+ GPU configuration: 1 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46085== Profiling application: ./sobel_gpu 128 1
+==46085== Profiling result:
+==46085== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       1.25%       1.25%       1.25%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46196== NVPROF is profiling process 46196, command: ./sobel_gpu 128 4
+ GPU configuration: 4 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46196== Profiling application: ./sobel_gpu 128 4
+==46196== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  112.34ms         1  112.34ms  112.34ms  112.34ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   66.96%  289.61ms         4  72.403ms  6.5600us  289.46ms  cudaMallocManaged
+                   29.17%  126.17ms         1  126.17ms  126.17ms  126.17ms  cudaDeviceSynchronize
+                    3.58%  15.476ms         4  3.8689ms  4.2060us  15.336ms  cudaMemPrefetchAsync
+                    0.17%  752.10us       101  7.4460us     117ns  332.97us  cuDeviceGetAttribute
+                    0.08%  351.00us         1  351.00us  351.00us  351.00us  cuDeviceTotalMem
+                    0.02%  103.93us         1  103.93us  103.93us  103.93us  cuDeviceGetName
+                    0.01%  57.884us         1  57.884us  57.884us  57.884us  cudaLaunchKernel
+                    0.00%  6.3470us         1  6.3470us  6.3470us  6.3470us  cuDeviceGetPCIBusId
+                    0.00%     979ns         3     326ns     129ns     664ns  cuDeviceGetCount
+                    0.00%     797ns         2     398ns     132ns     665ns  cuDeviceGet
+                    0.00%     194ns         1     194ns     194ns     194ns  cuDeviceGetUuid
+
+==46196== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.44202ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16699ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46443== NVPROF is profiling process 46443, command: ./sobel_gpu 128 4
+ GPU configuration: 4 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46443== Profiling application: ./sobel_gpu 128 4
+==46443== Profiling result:
+==46443== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       5.00%       5.00%       5.00%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46522== NVPROF is profiling process 46522, command: ./sobel_gpu 128 16
+ GPU configuration: 16 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46522== Profiling application: ./sobel_gpu 128 16
+==46522== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  28.052ms         1  28.052ms  28.052ms  28.052ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   83.10%  290.27ms         4  72.567ms  6.3000us  290.11ms  cudaMallocManaged
+                   12.02%  41.984ms         1  41.984ms  41.984ms  41.984ms  cudaDeviceSynchronize
+                    4.44%  15.523ms         4  3.8806ms  4.1730us  15.321ms  cudaMemPrefetchAsync
+                    0.22%  754.98us       101  7.4750us     272ns  333.10us  cuDeviceGetAttribute
+                    0.17%  593.64us         1  593.64us  593.64us  593.64us  cuDeviceTotalMem
+                    0.03%  99.269us         1  99.269us  99.269us  99.269us  cuDeviceGetName
+                    0.02%  75.810us         1  75.810us  75.810us  75.810us  cudaLaunchKernel
+                    0.00%  6.3180us         1  6.3180us  6.3180us  6.3180us  cuDeviceGetPCIBusId
+                    0.00%  1.4970us         3     499ns     314ns     860ns  cuDeviceGetCount
+                    0.00%     973ns         2     486ns     279ns     694ns  cuDeviceGet
+                    0.00%     355ns         1     355ns     355ns     355ns  cuDeviceGetUuid
+
+==46522== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.40731ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.18767ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46570== NVPROF is profiling process 46570, command: ./sobel_gpu 128 16
+ GPU configuration: 16 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46570== Profiling application: ./sobel_gpu 128 16
+==46570== Profiling result:
+==46570== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      19.99%      19.99%      19.99%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46616== NVPROF is profiling process 46616, command: ./sobel_gpu 128 64
+ GPU configuration: 64 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46616== Profiling application: ./sobel_gpu 128 64
+==46616== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  7.0858ms         1  7.0858ms  7.0858ms  7.0858ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   88.61%  294.69ms         4  73.673ms  7.0420us  294.53ms  cudaMallocManaged
+                    6.23%  20.718ms         1  20.718ms  20.718ms  20.718ms  cudaDeviceSynchronize
+                    4.72%  15.700ms         4  3.9251ms  4.5690us  15.509ms  cudaMemPrefetchAsync
+                    0.22%  737.91us       101  7.3060us     114ns  329.77us  cuDeviceGetAttribute
+                    0.17%  559.21us         1  559.21us  559.21us  559.21us  cuDeviceTotalMem
+                    0.03%  87.116us         1  87.116us  87.116us  87.116us  cuDeviceGetName
+                    0.02%  77.449us         1  77.449us  77.449us  77.449us  cudaLaunchKernel
+                    0.00%  6.5650us         1  6.5650us  6.5650us  6.5650us  cuDeviceGetPCIBusId
+                    0.00%  1.1450us         3     381ns     135ns     813ns  cuDeviceGetCount
+                    0.00%     583ns         2     291ns     123ns     460ns  cuDeviceGet
+                    0.00%     224ns         1     224ns     224ns     224ns  cuDeviceGetUuid
+
+==46616== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.43454ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15258ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46665== NVPROF is profiling process 46665, command: ./sobel_gpu 128 64
+ GPU configuration: 64 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46665== Profiling application: ./sobel_gpu 128 64
+==46665== Profiling result:
+==46665== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.91%      79.91%      79.91%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46713== NVPROF is profiling process 46713, command: ./sobel_gpu 128 256
+ GPU configuration: 256 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46713== Profiling application: ./sobel_gpu 128 256
+==46713== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.6912ms         1  2.6912ms  2.6912ms  2.6912ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.36%  289.61ms         4  72.404ms  6.9090us  289.46ms  cudaMallocManaged
+                    5.30%  17.178ms         1  17.178ms  17.178ms  17.178ms  cudaDeviceSynchronize
+                    4.92%  15.952ms         4  3.9881ms  4.5170us  15.754ms  cudaMemPrefetchAsync
+                    0.25%  797.85us       101  7.8990us     125ns  357.78us  cuDeviceGetAttribute
+                    0.12%  382.33us         1  382.33us  382.33us  382.33us  cuDeviceTotalMem
+                    0.04%  114.92us         1  114.92us  114.92us  114.92us  cuDeviceGetName
+                    0.02%  62.090us         1  62.090us  62.090us  62.090us  cudaLaunchKernel
+                    0.00%  7.0650us         1  7.0650us  7.0650us  7.0650us  cuDeviceGetPCIBusId
+                    0.00%  1.2740us         3     424ns     138ns     941ns  cuDeviceGetCount
+                    0.00%     917ns         2     458ns     130ns     787ns  cuDeviceGet
+                    0.00%     263ns         1     263ns     263ns     263ns  cuDeviceGetUuid
+
+==46713== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.42526ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.17031ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46765== NVPROF is profiling process 46765, command: ./sobel_gpu 128 256
+ GPU configuration: 256 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46765== Profiling application: ./sobel_gpu 128 256
+==46765== Profiling result:
+==46765== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      86.72%      86.72%      86.72%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46880== NVPROF is profiling process 46880, command: ./sobel_gpu 128 1024
+ GPU configuration: 1024 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46880== Profiling application: ./sobel_gpu 128 1024
+==46880== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.3058ms         1  2.3058ms  2.3058ms  2.3058ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.77%  292.90ms         4  73.225ms  6.7040us  292.74ms  cudaMallocManaged
+                    5.01%  16.333ms         1  16.333ms  16.333ms  16.333ms  cudaDeviceSynchronize
+                    4.82%  15.735ms         4  3.9337ms  11.442us  15.524ms  cudaMemPrefetchAsync
+                    0.23%  754.03us       101  7.4650us     116ns  332.80us  cuDeviceGetAttribute
+                    0.11%  352.40us         1  352.40us  352.40us  352.40us  cuDeviceTotalMem
+                    0.04%  120.76us         1  120.76us  120.76us  120.76us  cuDeviceGetName
+                    0.03%  82.583us         1  82.583us  82.583us  82.583us  cudaLaunchKernel
+                    0.00%  6.1150us         1  6.1150us  6.1150us  6.1150us  cuDeviceGetPCIBusId
+                    0.00%  1.2280us         3     409ns     123ns     948ns  cuDeviceGetCount
+                    0.00%     749ns         2     374ns     110ns     639ns  cuDeviceGet
+                    0.00%     243ns         1     243ns     243ns     243ns  cuDeviceGetUuid
+
+==46880== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.45604ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16770ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==46973== NVPROF is profiling process 46973, command: ./sobel_gpu 128 1024
+ GPU configuration: 1024 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==46973== Profiling application: ./sobel_gpu 128 1024
+==46973== Profiling result:
+==46973== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      95.82%      95.82%      95.82%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 128 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47029== NVPROF is profiling process 47029, command: ./sobel_gpu 128 4096
+ GPU configuration: 4096 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47029== Profiling application: ./sobel_gpu 128 4096
+==47029== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.1497ms         1  2.1497ms  2.1497ms  2.1497ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.48%  289.25ms         4  72.312ms  6.4390us  289.09ms  cudaMallocManaged
+                    5.21%  16.840ms         1  16.840ms  16.840ms  16.840ms  cudaDeviceSynchronize
+                    4.91%  15.862ms         4  3.9654ms  4.6490us  15.666ms  cudaMemPrefetchAsync
+                    0.23%  750.74us       101  7.4330us     116ns  332.86us  cuDeviceGetAttribute
+                    0.11%  353.97us         1  353.97us  353.97us  353.97us  cuDeviceTotalMem
+                    0.04%  113.23us         1  113.23us  113.23us  113.23us  cuDeviceGetName
+                    0.02%  75.265us         1  75.265us  75.265us  75.265us  cudaLaunchKernel
+                    0.00%  7.4380us         1  7.4380us  7.4380us  7.4380us  cuDeviceGetPCIBusId
+                    0.00%  1.2400us         3     413ns     142ns     934ns  cuDeviceGetCount
+                    0.00%     941ns         2     470ns     127ns     814ns  cuDeviceGet
+                    0.00%     215ns         1     215ns     215ns     215ns  cuDeviceGetUuid
+
+==47029== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.37547ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15949ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 128 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47088== NVPROF is profiling process 47088, command: ./sobel_gpu 128 4096
+ GPU configuration: 4096 blocks, 128 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47088== Profiling application: ./sobel_gpu 128 4096
+==47088== Profiling result:
+==47088== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      94.62%      94.62%      94.62%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47142== NVPROF is profiling process 47142, command: ./sobel_gpu 256 1
+ GPU configuration: 1 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47142== Profiling application: ./sobel_gpu 256 1
+==47142== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  247.13ms         1  247.13ms  247.13ms  247.13ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   50.93%  288.03ms         4  72.007ms  7.3950us  287.86ms  cudaMallocManaged
+                   46.12%  260.83ms         1  260.83ms  260.83ms  260.83ms  cudaDeviceSynchronize
+                    2.73%  15.425ms         4  3.8562ms  4.4060us  15.237ms  cudaMemPrefetchAsync
+                    0.13%  762.94us       101  7.5530us     276ns  332.44us  cuDeviceGetAttribute
+                    0.06%  346.66us         1  346.66us  346.66us  346.66us  cuDeviceTotalMem
+                    0.02%  91.031us         1  91.031us  91.031us  91.031us  cuDeviceGetName
+                    0.02%  85.198us         1  85.198us  85.198us  85.198us  cudaLaunchKernel
+                    0.00%  5.9880us         1  5.9880us  5.9880us  5.9880us  cuDeviceGetPCIBusId
+                    0.00%  1.4720us         3     490ns     310ns     841ns  cuDeviceGetCount
+                    0.00%     804ns         2     402ns     288ns     516ns  cuDeviceGet
+                    0.00%     346ns         1     346ns     346ns     346ns  cuDeviceGetUuid
+
+==47142== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.45927ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16219ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47198== NVPROF is profiling process 47198, command: ./sobel_gpu 256 1
+ GPU configuration: 1 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47198== Profiling application: ./sobel_gpu 256 1
+==47198== Profiling result:
+==47198== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       1.25%       1.25%       1.25%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47255== NVPROF is profiling process 47255, command: ./sobel_gpu 256 4
+ GPU configuration: 4 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47255== Profiling application: ./sobel_gpu 256 4
+==47255== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  61.714ms         1  61.714ms  61.714ms  61.714ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   75.88%  289.44ms         4  72.360ms  7.3010us  289.28ms  cudaMallocManaged
+                   19.74%  75.308ms         1  75.308ms  75.308ms  75.308ms  cudaDeviceSynchronize
+                    4.05%  15.439ms         4  3.8597ms  4.6500us  15.291ms  cudaMemPrefetchAsync
+                    0.20%  744.84us       101  7.3740us     117ns  336.74us  cuDeviceGetAttribute
+                    0.09%  347.06us         1  347.06us  347.06us  347.06us  cuDeviceTotalMem
+                    0.02%  91.263us         1  91.263us  91.263us  91.263us  cuDeviceGetName
+                    0.02%  69.891us         1  69.891us  69.891us  69.891us  cudaLaunchKernel
+                    0.00%  6.5600us         1  6.5600us  6.5600us  6.5600us  cuDeviceGetPCIBusId
+                    0.00%     920ns         3     306ns     155ns     603ns  cuDeviceGetCount
+                    0.00%     731ns         2     365ns     127ns     604ns  cuDeviceGet
+                    0.00%     227ns         1     227ns     227ns     227ns  cuDeviceGetUuid
+
+==47255== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.46037ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.17366ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47317== NVPROF is profiling process 47317, command: ./sobel_gpu 256 4
+ GPU configuration: 4 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47317== Profiling application: ./sobel_gpu 256 4
+==47317== Profiling result:
+==47317== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       5.00%       5.00%       5.00%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47371== NVPROF is profiling process 47371, command: ./sobel_gpu 256 16
+ GPU configuration: 16 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47371== Profiling application: ./sobel_gpu 256 16
+==47371== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  15.522ms         1  15.522ms  15.522ms  15.522ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   86.20%  288.67ms         4  72.167ms  6.7340us  288.51ms  cudaMallocManaged
+                    8.78%  29.406ms         1  29.406ms  29.406ms  29.406ms  cudaDeviceSynchronize
+                    4.63%  15.510ms         4  3.8776ms  4.4630us  15.311ms  cudaMemPrefetchAsync
+                    0.24%  791.60us       101  7.8370us     271ns  351.98us  cuDeviceGetAttribute
+                    0.10%  346.41us         1  346.41us  346.41us  346.41us  cuDeviceTotalMem
+                    0.03%  87.318us         1  87.318us  87.318us  87.318us  cuDeviceGetName
+                    0.02%  58.341us         1  58.341us  58.341us  58.341us  cudaLaunchKernel
+                    0.00%  6.2040us         1  6.2040us  6.2040us  6.2040us  cuDeviceGetPCIBusId
+                    0.00%  1.3010us         3     433ns     302ns     629ns  cuDeviceGetCount
+                    0.00%     877ns         2     438ns     297ns     580ns  cuDeviceGet
+                    0.00%     375ns         1     375ns     375ns     375ns  cuDeviceGetUuid
+
+==47371== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.37441ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16590ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47427== NVPROF is profiling process 47427, command: ./sobel_gpu 256 16
+ GPU configuration: 16 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47427== Profiling application: ./sobel_gpu 256 16
+==47427== Profiling result:
+==47427== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      19.99%      19.99%      19.99%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47613== NVPROF is profiling process 47613, command: ./sobel_gpu 256 64
+ GPU configuration: 64 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47613== Profiling application: ./sobel_gpu 256 64
+==47613== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  4.5072ms         1  4.5072ms  4.5072ms  4.5072ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.16%  287.58ms         4  71.894ms  7.5800us  287.42ms  cudaMallocManaged
+                    5.61%  18.089ms         1  18.089ms  18.089ms  18.089ms  cudaDeviceSynchronize
+                    4.83%  15.568ms         4  3.8920ms  6.1080us  15.363ms  cudaMemPrefetchAsync
+                    0.23%  754.67us       101  7.4710us     124ns  338.54us  cuDeviceGetAttribute
+                    0.12%  371.74us         1  371.74us  371.74us  371.74us  cuDeviceTotalMem
+                    0.03%  98.127us         1  98.127us  98.127us  98.127us  cuDeviceGetName
+                    0.03%  82.174us         1  82.174us  82.174us  82.174us  cudaLaunchKernel
+                    0.00%  6.5790us         1  6.5790us  6.5790us  6.5790us  cuDeviceGetPCIBusId
+                    0.00%  1.4250us         3     475ns     175ns  1.0100us  cuDeviceGetCount
+                    0.00%     734ns         2     367ns     170ns     564ns  cuDeviceGet
+                    0.00%     237ns         1     237ns     237ns     237ns  cuDeviceGetUuid
+
+==47613== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.44631ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.25750ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47735== NVPROF is profiling process 47735, command: ./sobel_gpu 256 64
+ GPU configuration: 64 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47735== Profiling application: ./sobel_gpu 256 64
+==47735== Profiling result:
+==47735== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.86%      79.86%      79.86%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47793== NVPROF is profiling process 47793, command: ./sobel_gpu 256 256
+ GPU configuration: 256 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47793== Profiling application: ./sobel_gpu 256 256
+==47793== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.9096ms         1  2.9096ms  2.9096ms  2.9096ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.62%  288.58ms         4  72.145ms  13.817us  288.42ms  cudaMallocManaged
+                    5.19%  16.715ms         1  16.715ms  16.715ms  16.715ms  cudaDeviceSynchronize
+                    4.79%  15.415ms         4  3.8538ms  4.6490us  15.217ms  cudaMemPrefetchAsync
+                    0.25%  790.23us       101  7.8240us     282ns  358.48us  cuDeviceGetAttribute
+                    0.11%  344.95us         1  344.95us  344.95us  344.95us  cuDeviceTotalMem
+                    0.03%  87.367us         1  87.367us  87.367us  87.367us  cuDeviceGetName
+                    0.02%  74.401us         1  74.401us  74.401us  74.401us  cudaLaunchKernel
+                    0.00%  6.2450us         1  6.2450us  6.2450us  6.2450us  cuDeviceGetPCIBusId
+                    0.00%  1.4260us         3     475ns     297ns     813ns  cuDeviceGetCount
+                    0.00%     909ns         2     454ns     285ns     624ns  cuDeviceGet
+                    0.00%     366ns         1     366ns     366ns     366ns  cuDeviceGetUuid
+
+==47793== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.44226ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.25813ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47854== NVPROF is profiling process 47854, command: ./sobel_gpu 256 256
+ GPU configuration: 256 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47854== Profiling application: ./sobel_gpu 256 256
+==47854== Profiling result:
+==47854== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      80.39%      80.39%      80.39%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47912== NVPROF is profiling process 47912, command: ./sobel_gpu 256 1024
+ GPU configuration: 1024 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47912== Profiling application: ./sobel_gpu 256 1024
+==47912== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.7476ms         1  2.7476ms  2.7476ms  2.7476ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.63%  287.01ms         4  71.753ms  7.2640us  286.85ms  cudaMallocManaged
+                    5.11%  16.355ms         1  16.355ms  16.355ms  16.355ms  cudaDeviceSynchronize
+                    4.86%  15.572ms         4  3.8930ms  4.6240us  15.377ms  cudaMemPrefetchAsync
+                    0.24%  769.44us       101  7.6180us     274ns  334.08us  cuDeviceGetAttribute
+                    0.11%  354.35us         1  354.35us  354.35us  354.35us  cuDeviceTotalMem
+                    0.03%  101.79us         1  101.79us  101.79us  101.79us  cuDeviceGetName
+                    0.02%  59.565us         1  59.565us  59.565us  59.565us  cudaLaunchKernel
+                    0.00%  6.2340us         1  6.2340us  6.2340us  6.2340us  cuDeviceGetPCIBusId
+                    0.00%  1.6160us         3     538ns     304ns  1.0000us  cuDeviceGetCount
+                    0.00%     967ns         2     483ns     277ns     690ns  cuDeviceGet
+                    0.00%     365ns         1     365ns     365ns     365ns  cuDeviceGetUuid
+
+==47912== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.42658ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.24588ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==47972== NVPROF is profiling process 47972, command: ./sobel_gpu 256 1024
+ GPU configuration: 1024 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==47972== Profiling application: ./sobel_gpu 256 1024
+==47972== Profiling result:
+==47972== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      91.69%      91.69%      91.69%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 256 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==48031== NVPROF is profiling process 48031, command: ./sobel_gpu 256 4096
+ GPU configuration: 4096 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==48031== Profiling application: ./sobel_gpu 256 4096
+==48031== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.4153ms         1  2.4153ms  2.4153ms  2.4153ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.39%  286.96ms         4  71.741ms  6.7840us  286.81ms  cudaMallocManaged
+                    5.39%  17.307ms         1  17.307ms  17.307ms  17.307ms  cudaDeviceSynchronize
+                    4.83%  15.496ms         4  3.8739ms  4.8050us  15.347ms  cudaMemPrefetchAsync
+                    0.24%  758.84us       101  7.5130us     116ns  340.48us  cuDeviceGetAttribute
+                    0.11%  346.76us         1  346.76us  346.76us  346.76us  cuDeviceTotalMem
+                    0.03%  87.108us         1  87.108us  87.108us  87.108us  cuDeviceGetName
+                    0.02%  57.654us         1  57.654us  57.654us  57.654us  cudaLaunchKernel
+                    0.00%  6.8510us         1  6.8510us  6.8510us  6.8510us  cuDeviceGetPCIBusId
+                    0.00%     865ns         3     288ns     159ns     543ns  cuDeviceGetCount
+                    0.00%     554ns         2     277ns     115ns     439ns  cuDeviceGet
+                    0.00%     242ns         1     242ns     242ns     242ns  cuDeviceGetUuid
+
+==48031== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.40878ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.25042ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 256 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==48091== NVPROF is profiling process 48091, command: ./sobel_gpu 256 4096
+ GPU configuration: 4096 blocks, 256 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==48091== Profiling application: ./sobel_gpu 256 4096
+==48091== Profiling result:
+==48091== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      96.71%      96.71%      96.71%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==48154== NVPROF is profiling process 48154, command: ./sobel_gpu 512 1
+ GPU configuration: 1 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==48154== Profiling application: ./sobel_gpu 512 1
+==48154== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  190.83ms         1  190.83ms  190.83ms  190.83ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   56.36%  287.71ms         4  71.927ms  6.6260us  287.54ms  cudaMallocManaged
+                   40.22%  205.32ms         1  205.32ms  205.32ms  205.32ms  cudaDeviceSynchronize
+                    3.16%  16.149ms         4  4.0373ms  12.778us  15.915ms  cudaMemPrefetchAsync
+                    0.15%  759.65us       101  7.5210us     119ns  341.23us  cuDeviceGetAttribute
+                    0.07%  340.98us         1  340.98us  340.98us  340.98us  cuDeviceTotalMem
+                    0.02%  98.339us         1  98.339us  98.339us  98.339us  cuDeviceGetName
+                    0.01%  71.516us         1  71.516us  71.516us  71.516us  cudaLaunchKernel
+                    0.00%  6.1220us         1  6.1220us  6.1220us  6.1220us  cuDeviceGetPCIBusId
+                    0.00%  1.3830us         3     461ns     303ns     750ns  cuDeviceGetCount
+                    0.00%     789ns         2     394ns     277ns     512ns  cuDeviceGet
+                    0.00%     249ns         1     249ns     249ns     249ns  cuDeviceGetUuid
+
+==48154== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.47674ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.20251ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==48214== NVPROF is profiling process 48214, command: ./sobel_gpu 512 1
+ GPU configuration: 1 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==48214== Profiling application: ./sobel_gpu 512 1
+==48214== Profiling result:
+==48214== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       1.25%       1.25%       1.25%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==48461== NVPROF is profiling process 48461, command: ./sobel_gpu 512 4
+ GPU configuration: 4 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==48461== Profiling application: ./sobel_gpu 512 4
+==48461== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  42.763ms         1  42.763ms  42.763ms  42.763ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   79.61%  289.60ms         4  72.401ms  6.7700us  289.45ms  cudaMallocManaged
+                   15.57%  56.645ms         1  56.645ms  56.645ms  56.645ms  cudaDeviceSynchronize
+                    4.33%  15.749ms         4  3.9373ms  4.3300us  15.548ms  cudaMemPrefetchAsync
+                    0.28%  1.0204ms       101  10.102us     116ns  462.92us  cuDeviceGetAttribute
+                    0.16%  568.33us         1  568.33us  568.33us  568.33us  cuDeviceTotalMem
+                    0.04%  135.61us         1  135.61us  135.61us  135.61us  cuDeviceGetName
+                    0.02%  58.256us         1  58.256us  58.256us  58.256us  cudaLaunchKernel
+                    0.00%  7.0110us         1  7.0110us  7.0110us  7.0110us  cuDeviceGetPCIBusId
+                    0.00%  1.2030us         3     401ns     121ns     920ns  cuDeviceGetCount
+                    0.00%     652ns         2     326ns     122ns     530ns  cuDeviceGet
+                    0.00%     251ns         1     251ns     251ns     251ns  cuDeviceGetUuid
+
+==48461== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.41428ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.18564ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==48975== NVPROF is profiling process 48975, command: ./sobel_gpu 512 4
+ GPU configuration: 4 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==48975== Profiling application: ./sobel_gpu 512 4
+==48975== Profiling result:
+==48975== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       4.99%       4.99%       4.99%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49034== NVPROF is profiling process 49034, command: ./sobel_gpu 512 16
+ GPU configuration: 16 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49034== Profiling application: ./sobel_gpu 512 16
+==49034== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  10.735ms         1  10.735ms  10.735ms  10.735ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   88.00%  308.47ms         4  77.118ms  6.9180us  308.32ms  cudaMallocManaged
+                    7.10%  24.885ms         1  24.885ms  24.885ms  24.885ms  cudaDeviceSynchronize
+                    4.53%  15.885ms         4  3.9712ms  4.4730us  15.720ms  cudaMemPrefetchAsync
+                    0.21%  752.18us       101  7.4470us     117ns  340.30us  cuDeviceGetAttribute
+                    0.10%  353.30us         1  353.30us  353.30us  353.30us  cuDeviceTotalMem
+                    0.03%  121.18us         1  121.18us  121.18us  121.18us  cuDeviceGetName
+                    0.02%  59.837us         1  59.837us  59.837us  59.837us  cudaLaunchKernel
+                    0.00%  6.4450us         1  6.4450us  6.4450us  6.4450us  cuDeviceGetPCIBusId
+                    0.00%  1.6850us         3     561ns     125ns  1.3780us  cuDeviceGetCount
+                    0.00%     645ns         2     322ns     128ns     517ns  cuDeviceGet
+                    0.00%     273ns         1     273ns     273ns     273ns  cuDeviceGetUuid
+
+==49034== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.39163ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.19017ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49138== NVPROF is profiling process 49138, command: ./sobel_gpu 512 16
+ GPU configuration: 16 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49138== Profiling application: ./sobel_gpu 512 16
+==49138== Profiling result:
+==49138== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      19.87%      19.87%      19.87%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49189== NVPROF is profiling process 49189, command: ./sobel_gpu 512 64
+ GPU configuration: 64 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49189== Profiling application: ./sobel_gpu 512 64
+==49189== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.7356ms         1  2.7356ms  2.7356ms  2.7356ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.61%  288.32ms         4  72.080ms  6.4480us  288.16ms  cudaMallocManaged
+                    5.15%  16.560ms         1  16.560ms  16.560ms  16.560ms  cudaDeviceSynchronize
+                    4.83%  15.555ms         4  3.8887ms  4.6010us  15.406ms  cudaMemPrefetchAsync
+                    0.24%  773.94us       101  7.6620us     280ns  345.92us  cuDeviceGetAttribute
+                    0.11%  353.43us         1  353.43us  353.43us  353.43us  cuDeviceTotalMem
+                    0.04%  121.35us         1  121.35us  121.35us  121.35us  cuDeviceGetName
+                    0.02%  58.836us         1  58.836us  58.836us  58.836us  cudaLaunchKernel
+                    0.00%  7.9120us         1  7.9120us  7.9120us  7.9120us  cuDeviceGetPCIBusId
+                    0.00%  1.6050us         3     535ns     321ns     951ns  cuDeviceGetCount
+                    0.00%     894ns         2     447ns     297ns     597ns  cuDeviceGet
+                    0.00%     351ns         1     351ns     351ns     351ns  cuDeviceGetUuid
+
+==49189== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.37896ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15612ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49271== NVPROF is profiling process 49271, command: ./sobel_gpu 512 64
+ GPU configuration: 64 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49271== Profiling application: ./sobel_gpu 512 64
+==49271== Profiling result:
+==49271== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.11%      79.11%      79.11%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49311== NVPROF is profiling process 49311, command: ./sobel_gpu 512 256
+ GPU configuration: 256 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49311== Profiling application: ./sobel_gpu 512 256
+==49311== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.5381ms         1  2.5381ms  2.5381ms  2.5381ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.35%  289.89ms         4  72.472ms  6.4750us  289.73ms  cudaMallocManaged
+                    5.36%  17.377ms         1  17.377ms  17.377ms  17.377ms  cudaDeviceSynchronize
+                    4.91%  15.919ms         4  3.9797ms  4.4120us  15.721ms  cudaMemPrefetchAsync
+                    0.23%  746.49us       101  7.3900us     118ns  331.95us  cuDeviceGetAttribute
+                    0.11%  345.57us         1  345.57us  345.57us  345.57us  cuDeviceTotalMem
+                    0.03%  86.091us         1  86.091us  86.091us  86.091us  cuDeviceGetName
+                    0.02%  63.450us         1  63.450us  63.450us  63.450us  cudaLaunchKernel
+                    0.00%  6.3030us         1  6.3030us  6.3030us  6.3030us  cuDeviceGetPCIBusId
+                    0.00%  1.1060us         3     368ns     135ns     797ns  cuDeviceGetCount
+                    0.00%     560ns         2     280ns     130ns     430ns  cuDeviceGet
+                    0.00%     238ns         1     238ns     238ns     238ns  cuDeviceGetUuid
+
+==49311== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.37414ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15837ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49351== NVPROF is profiling process 49351, command: ./sobel_gpu 512 256
+ GPU configuration: 256 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49351== Profiling application: ./sobel_gpu 512 256
+==49351== Profiling result:
+==49351== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      64.34%      64.34%      64.34%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49389== NVPROF is profiling process 49389, command: ./sobel_gpu 512 1024
+ GPU configuration: 1024 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49389== Profiling application: ./sobel_gpu 512 1024
+==49389== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.1648ms         1  2.1648ms  2.1648ms  2.1648ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.75%  287.73ms         4  71.933ms  6.6090us  287.54ms  cudaMallocManaged
+                    4.95%  15.879ms         1  15.879ms  15.879ms  15.879ms  cudaDeviceSynchronize
+                    4.90%  15.705ms         4  3.9262ms  4.3560us  15.508ms  cudaMemPrefetchAsync
+                    0.23%  747.10us       101  7.3960us     113ns  331.55us  cuDeviceGetAttribute
+                    0.11%  344.36us         1  344.36us  344.36us  344.36us  cuDeviceTotalMem
+                    0.03%  107.65us         1  107.65us  107.65us  107.65us  cuDeviceGetName
+                    0.02%  74.936us         1  74.936us  74.936us  74.936us  cudaLaunchKernel
+                    0.00%  6.2760us         1  6.2760us  6.2760us  6.2760us  cuDeviceGetPCIBusId
+                    0.00%  1.1070us         3     369ns     141ns     790ns  cuDeviceGetCount
+                    0.00%     506ns         2     253ns     106ns     400ns  cuDeviceGet
+                    0.00%     231ns         1     231ns     231ns     231ns  cuDeviceGetUuid
+
+==49389== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.45282ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.17395ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49429== NVPROF is profiling process 49429, command: ./sobel_gpu 512 1024
+ GPU configuration: 1024 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49429== Profiling application: ./sobel_gpu 512 1024
+==49429== Profiling result:
+==49429== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      91.47%      91.47%      91.47%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 512 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49467== NVPROF is profiling process 49467, command: ./sobel_gpu 512 4096
+ GPU configuration: 4096 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49467== Profiling application: ./sobel_gpu 512 4096
+==49467== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.0173ms         1  2.0173ms  2.0173ms  2.0173ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.63%  286.80ms         4  71.701ms  7.4350us  286.64ms  cudaMallocManaged
+                    5.02%  16.078ms         1  16.078ms  16.078ms  16.078ms  cudaDeviceSynchronize
+                    4.94%  15.822ms         4  3.9554ms  10.301us  15.666ms  cudaMemPrefetchAsync
+                    0.24%  762.67us       101  7.5510us     275ns  332.31us  cuDeviceGetAttribute
+                    0.11%  345.30us         1  345.30us  345.30us  345.30us  cuDeviceTotalMem
+                    0.03%  103.99us         1  103.99us  103.99us  103.99us  cuDeviceGetName
+                    0.02%  76.344us         1  76.344us  76.344us  76.344us  cudaLaunchKernel
+                    0.00%  6.0590us         1  6.0590us  6.0590us  6.0590us  cuDeviceGetPCIBusId
+                    0.00%  1.3900us         3     463ns     280ns     791ns  cuDeviceGetCount
+                    0.00%     804ns         2     402ns     260ns     544ns  cuDeviceGet
+                    0.00%     358ns         1     358ns     358ns     358ns  cuDeviceGetUuid
+
+==49467== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.48526ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16786ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 512 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49508== NVPROF is profiling process 49508, command: ./sobel_gpu 512 4096
+ GPU configuration: 4096 blocks, 512 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49508== Profiling application: ./sobel_gpu 512 4096
+==49508== Profiling result:
+==49508== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      97.98%      97.98%      97.98%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49546== NVPROF is profiling process 49546, command: ./sobel_gpu 1024 1
+ GPU configuration: 1 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49546== Profiling application: ./sobel_gpu 1024 1
+==49546== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  156.72ms         1  156.72ms  156.72ms  156.72ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   60.56%  288.98ms         4  72.246ms  6.2870us  288.83ms  cudaMallocManaged
+                   35.86%  171.12ms         1  171.12ms  171.12ms  171.12ms  cudaDeviceSynchronize
+                    3.31%  15.797ms         4  3.9492ms  4.8350us  15.657ms  cudaMemPrefetchAsync
+                    0.16%  771.97us       101  7.6430us     116ns  359.17us  cuDeviceGetAttribute
+                    0.07%  346.26us         1  346.26us  346.26us  346.26us  cuDeviceTotalMem
+                    0.02%  91.950us         1  91.950us  91.950us  91.950us  cuDeviceGetName
+                    0.02%  74.509us         1  74.509us  74.509us  74.509us  cudaLaunchKernel
+                    0.00%  6.4690us         1  6.4690us  6.4690us  6.4690us  cuDeviceGetPCIBusId
+                    0.00%  1.0740us         3     358ns     125ns     789ns  cuDeviceGetCount
+                    0.00%     500ns         2     250ns     115ns     385ns  cuDeviceGet
+                    0.00%     250ns         1     250ns     250ns     250ns  cuDeviceGetUuid
+
+==49546== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.46577ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16071ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 1
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49586== NVPROF is profiling process 49586, command: ./sobel_gpu 1024 1
+ GPU configuration: 1 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49586== Profiling application: ./sobel_gpu 1024 1
+==49586== Profiling result:
+==49586== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       1.25%       1.25%       1.25%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49627== NVPROF is profiling process 49627, command: ./sobel_gpu 1024 4
+ GPU configuration: 4 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49627== Profiling application: ./sobel_gpu 1024 4
+==49627== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  39.201ms         1  39.201ms  39.201ms  39.201ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   80.11%  292.83ms         4  73.207ms  6.8180us  292.67ms  cudaMallocManaged
+                   15.22%  55.636ms         1  55.636ms  55.636ms  55.636ms  cudaDeviceSynchronize
+                    4.28%  15.644ms         4  3.9110ms  5.1500us  15.475ms  cudaMemPrefetchAsync
+                    0.21%  769.99us       101  7.6230us     274ns  346.70us  cuDeviceGetAttribute
+                    0.10%  372.08us         1  372.08us  372.08us  372.08us  cuDeviceTotalMem
+                    0.05%  197.25us         1  197.25us  197.25us  197.25us  cuDeviceGetName
+                    0.02%  73.901us         1  73.901us  73.901us  73.901us  cudaLaunchKernel
+                    0.00%  8.4030us         1  8.4030us  8.4030us  8.4030us  cuDeviceGetPCIBusId
+                    0.00%  1.5630us         3     521ns     290ns     954ns  cuDeviceGetCount
+                    0.00%     667ns         2     333ns     273ns     394ns  cuDeviceGet
+                    0.00%     362ns         1     362ns     362ns     362ns  cuDeviceGetUuid
+
+==49627== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.44485ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15023ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 4
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49667== NVPROF is profiling process 49667, command: ./sobel_gpu 1024 4
+ GPU configuration: 4 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49667== Profiling application: ./sobel_gpu 1024 4
+==49667== Profiling result:
+==49667== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity       5.00%       5.00%       5.00%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49706== NVPROF is profiling process 49706, command: ./sobel_gpu 1024 16
+ GPU configuration: 16 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49706== Profiling application: ./sobel_gpu 1024 16
+==49706== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  9.8151ms         1  9.8151ms  9.8151ms  9.8151ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   87.59%  293.56ms         4  73.389ms  6.8130us  293.40ms  cudaMallocManaged
+                    7.22%  24.196ms         1  24.196ms  24.196ms  24.196ms  cudaDeviceSynchronize
+                    4.80%  16.089ms         4  4.0221ms  4.2270us  15.894ms  cudaMemPrefetchAsync
+                    0.23%  768.38us       101  7.6070us     119ns  349.16us  cuDeviceGetAttribute
+                    0.11%  353.06us         1  353.06us  353.06us  353.06us  cuDeviceTotalMem
+                    0.04%  127.01us         1  127.01us  127.01us  127.01us  cuDeviceGetName
+                    0.02%  60.443us         1  60.443us  60.443us  60.443us  cudaLaunchKernel
+                    0.00%  7.5140us         1  7.5140us  7.5140us  7.5140us  cuDeviceGetPCIBusId
+                    0.00%  1.5350us         3     511ns     123ns  1.2330us  cuDeviceGetCount
+                    0.00%     843ns         2     421ns     114ns     729ns  cuDeviceGet
+                    0.00%     252ns         1     252ns     252ns     252ns  cuDeviceGetUuid
+
+==49706== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.44875ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.16607ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 16
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49747== NVPROF is profiling process 49747, command: ./sobel_gpu 1024 16
+ GPU configuration: 16 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49747== Profiling application: ./sobel_gpu 1024 16
+==49747== Profiling result:
+==49747== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      19.96%      19.96%      19.96%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49785== NVPROF is profiling process 49785, command: ./sobel_gpu 1024 64
+ GPU configuration: 64 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49785== Profiling application: ./sobel_gpu 1024 64
+==49785== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.4796ms         1  2.4796ms  2.4796ms  2.4796ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.57%  292.20ms         4  73.049ms  6.8380us  292.03ms  cudaMallocManaged
+                    5.02%  16.369ms         4  4.0921ms  4.6820us  16.157ms  cudaMemPrefetchAsync
+                    5.01%  16.335ms         1  16.335ms  16.335ms  16.335ms  cudaDeviceSynchronize
+                    0.24%  783.54us       101  7.7570us     274ns  343.16us  cuDeviceGetAttribute
+                    0.11%  354.55us         1  354.55us  354.55us  354.55us  cuDeviceTotalMem
+                    0.04%  116.20us         1  116.20us  116.20us  116.20us  cuDeviceGetName
+                    0.02%  74.794us         1  74.794us  74.794us  74.794us  cudaLaunchKernel
+                    0.00%  6.0950us         1  6.0950us  6.0950us  6.0950us  cuDeviceGetPCIBusId
+                    0.00%  1.5570us         3     519ns     307ns     931ns  cuDeviceGetCount
+                    0.00%  1.0720us         2     536ns     281ns     791ns  cuDeviceGet
+                    0.00%     343ns         1     343ns     343ns     343ns  cuDeviceGetUuid
+
+==49785== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.42616ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15615ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 64
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49829== NVPROF is profiling process 49829, command: ./sobel_gpu 1024 64
+ GPU configuration: 64 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49829== Profiling application: ./sobel_gpu 1024 64
+==49829== Profiling result:
+==49829== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.37%      79.37%      79.37%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49867== NVPROF is profiling process 49867, command: ./sobel_gpu 1024 256
+ GPU configuration: 256 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49867== Profiling application: ./sobel_gpu 1024 256
+==49867== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.4640ms         1  2.4640ms  2.4640ms  2.4640ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.53%  290.24ms         4  72.561ms  6.5930us  290.08ms  cudaMallocManaged
+                    5.04%  16.325ms         1  16.325ms  16.325ms  16.325ms  cudaDeviceSynchronize
+                    5.02%  16.277ms         4  4.0692ms  4.8070us  16.065ms  cudaMemPrefetchAsync
+                    0.24%  765.96us       101  7.5830us     259ns  330.80us  cuDeviceGetAttribute
+                    0.11%  353.21us         1  353.21us  353.21us  353.21us  cuDeviceTotalMem
+                    0.04%  123.34us         1  123.34us  123.34us  123.34us  cuDeviceGetName
+                    0.02%  75.639us         1  75.639us  75.639us  75.639us  cudaLaunchKernel
+                    0.00%  6.4860us         1  6.4860us  6.4860us  6.4860us  cuDeviceGetPCIBusId
+                    0.00%  1.5240us         3     508ns     334ns     850ns  cuDeviceGetCount
+                    0.00%  1.0060us         2     503ns     283ns     723ns  cuDeviceGet
+                    0.00%     348ns         1     348ns     348ns     348ns  cuDeviceGetUuid
+
+==49867== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.46334ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15675ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 256
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49907== NVPROF is profiling process 49907, command: ./sobel_gpu 1024 256
+ GPU configuration: 256 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49907== Profiling application: ./sobel_gpu 1024 256
+==49907== Profiling result:
+==49907== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      79.96%      79.96%      79.96%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49945== NVPROF is profiling process 49945, command: ./sobel_gpu 1024 1024
+ GPU configuration: 1024 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49945== Profiling application: ./sobel_gpu 1024 1024
+==49945== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.0193ms         1  2.0193ms  2.0193ms  2.0193ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.72%  293.67ms         4  73.418ms  7.2820us  293.50ms  cudaMallocManaged
+                    4.94%  16.172ms         4  4.0430ms  4.2380us  15.952ms  cudaMemPrefetchAsync
+                    4.94%  16.163ms         1  16.163ms  16.163ms  16.163ms  cudaDeviceSynchronize
+                    0.23%  765.40us       101  7.5780us     115ns  355.41us  cuDeviceGetAttribute
+                    0.11%  346.70us         1  346.70us  346.70us  346.70us  cuDeviceTotalMem
+                    0.04%  114.89us         1  114.89us  114.89us  114.89us  cuDeviceGetName
+                    0.02%  75.567us         1  75.567us  75.567us  75.567us  cudaLaunchKernel
+                    0.00%  7.7390us         1  7.7390us  7.7390us  7.7390us  cuDeviceGetPCIBusId
+                    0.00%  1.2490us         3     416ns     134ns     913ns  cuDeviceGetCount
+                    0.00%     933ns         2     466ns     114ns     819ns  cuDeviceGet
+                    0.00%     236ns         1     236ns     236ns     236ns  cuDeviceGetUuid
+
+==49945== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.39250ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.17375ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 1024
+ Read data from the file ../data/zebra-gray-int8-4x 
+==49985== NVPROF is profiling process 49985, command: ./sobel_gpu 1024 1024
+ GPU configuration: 1024 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==49985== Profiling application: ./sobel_gpu 1024 1024
+==49985== Profiling result:
+==49985== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      98.13%      98.13%      98.13%
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+nvprof ./sobel_gpu 1024 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==50023== NVPROF is profiling process 50023, command: ./sobel_gpu 1024 4096
+ GPU configuration: 4096 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==50023== Profiling application: ./sobel_gpu 1024 4096
+==50023== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  2.0698ms         1  2.0698ms  2.0698ms  2.0698ms  sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+      API calls:   89.30%  290.01ms         4  72.501ms  6.8700us  289.85ms  cudaMallocManaged
+                    5.14%  16.708ms         1  16.708ms  16.708ms  16.708ms  cudaDeviceSynchronize
+                    5.00%  16.241ms         4  4.0603ms  4.2620us  16.078ms  cudaMemPrefetchAsync
+                    0.40%  1.2838ms       101  12.711us     116ns  866.20us  cuDeviceGetAttribute
+                    0.10%  338.85us         1  338.85us  338.85us  338.85us  cuDeviceTotalMem
+                    0.04%  124.27us         1  124.27us  124.27us  124.27us  cuDeviceGetName
+                    0.02%  59.856us         1  59.856us  59.856us  59.856us  cudaLaunchKernel
+                    0.00%  6.1970us         1  6.1970us  6.1970us  6.1970us  cuDeviceGetPCIBusId
+                    0.00%     990ns         3     330ns     144ns     680ns  cuDeviceGetCount
+                    0.00%     620ns         2     310ns     126ns     494ns  cuDeviceGet
+                    0.00%     235ns         1     235ns     235ns     235ns  cuDeviceGetUuid
+
+==50023== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     141  1.9804MB  4.0000KB  2.0000MB  279.2305MB  24.43035ms  Host To Device
+     840  170.19KB  4.0000KB  0.9961MB  139.6133MB  12.15868ms  Device To Host
+Total CPU Page faults: 1261
+
+nvprof ./sobel_gpu 1024 4096
+ Read data from the file ../data/zebra-gray-int8-4x 
+==50064== NVPROF is profiling process 50064, command: ./sobel_gpu 1024 4096
+ GPU configuration: 4096 blocks, 1024 threads per block 
+ Wrote the output file ../data/processed-raw-int8-4x-gpu.dat 
+==50064== Profiling application: ./sobel_gpu 1024 4096
+==50064== Profiling result:
+==50064== Metric result:
+Invocations                               Metric Name                        Metric Description         Min         Max         Avg
+Device "Tesla V100-SXM2-16GB (0)"
+    Kernel: sobel_kernel_gpu(float*, float*, int, int, int, float*, float*)
+          1                             sm_efficiency                   Multiprocessor Activity      98.24%      98.24%      98.24%
